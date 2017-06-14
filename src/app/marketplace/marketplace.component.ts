@@ -23,8 +23,8 @@ export class MarketplaceComponent implements OnInit {
     this.albums = this.albumService.getAlbums();
   }
   // event binding method to click on each album
-  goToDetailPage(clickedAlbum: Album){
-    this.router.navigate(['albums', clickedAlbum.id]);
-  }
+  goToDetailPage(clickedAlbum){
+    this.router.navigate(['albums', clickedAlbum.$key]);
+  };
 
 }
