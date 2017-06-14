@@ -1,34 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { Router} from '@angular/router';
 import { Album } from '../album.model';
+import { AlbumService } from '../album.service';
 
 @Component({
   selector: 'app-marketplace',
   templateUrl: './marketplace.component.html',
-  styleUrls: ['./marketplace.component.css']
+  styleUrls: ['./marketplace.component.css'],
+  providers: [AlbumService]
+  
 })
 export class MarketplaceComponent {
+  albums: Album[];
 
   // Router object in a constructor method
-  constructor(private router: Router){}
+  constructor(private router: Router, private albumService: AlbumService){}
 
-// looping through each album in albums array
-  albums: Album[] = [
-    new Album("Pulse", "Pink Floyd",
-    "A live  album by the English progressive rock band originally released in 1995, on the label EMI in the United Kingdom.", 1),
-    new Album("Funhouse", "The Stooges",
-    "The second  album from the American rock band, released in 1970 by Elektra Records.", 2),
-    new Album("Twilight of the Thunder God", "Amon Amarth",
-    "Seventh album by the Swedish band, released in 2008, based on Thor's battle with the serpent Jörmungandr.", 3),
-    new Album("Dilate", "Ani DiFranco",
-    "Her highest-selling and most acclaimed album, released in 1996.", 4),
-    new Album("Chopin - Complete Nocturnes", "Brigitte Engerer",
-    "Released in 2010, this is Engerer's own rendition of the classical composer Chopin.", 5),
-    new Album("Axis Bold As Love", "The Jimi Hendrix Experience",
-    "Second studio album by the English-American band, released in 1967.", 6)
-  ];
 
-  // event binding method to click on each album 
+  // event binding method to click on each album
   goToDetailPage(clickedAlbum: Album){
     this.router.navigate(['albums', clickedAlbum.id]);
   }
