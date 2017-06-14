@@ -1,15 +1,21 @@
 import { Injectable } from '@angular/core';
 import { Album } from './album.model';
 import { ALBUMS } from './mock-albums';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+
 
 @Injectable()
 export class AlbumService {
+  albums: FirebaseListObservable<any[]>;
 
-  constructor() { }
+  constructor(private database: AngularFireDatabase) {
+    this.albums = database.list('albums');
+  }
+
 
   // method to retrieve Albums from the list in mock-albums.ts
   getAlbums(){
-    return ALBUMS;
+    return this.albums;
   }
 
   getAlbumById(albumId: number){
