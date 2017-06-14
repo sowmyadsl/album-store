@@ -8,15 +8,18 @@ import { AlbumService } from '../album.service';
   templateUrl: './marketplace.component.html',
   styleUrls: ['./marketplace.component.css'],
   providers: [AlbumService]
-  
+
 })
-export class MarketplaceComponent {
+export class MarketplaceComponent implements OnInit {
   albums: Album[];
 
   // Router object in a constructor method
   constructor(private router: Router, private albumService: AlbumService){}
 
-
+  //will retrieve the service and call this method
+  ngOnInit(){
+    this.albums = this.albumService.getAlbums();
+  }
   // event binding method to click on each album
   goToDetailPage(clickedAlbum: Album){
     this.router.navigate(['albums', clickedAlbum.id]);
