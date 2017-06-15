@@ -1,5 +1,11 @@
-<div>
-  <h3>{{(albumToDisplay | async)?.title}}</h3>
-  <h4>{{(albumToDisplay | async)?.artist}}</h4>
-  <p>{{(albumToDisplay | async)?.description}}</p>
+<div class="row">
+  <div class="col-sm-6">
+    <h3>{{(albumToDisplay | async)?.title}}</h3>
+    <strong>{{(albumToDisplay | async)?.artist}}</strong>
+    <br><br>
+    <p>{{(albumToDisplay | async)?.description}}</p>
+  </div>
+  <div class="col-sm-6">
+    <img src="{{(albumToDisplay | async)?.image}}">
+  </div>
 </div>

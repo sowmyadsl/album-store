@@ -16,8 +16,8 @@ export class AdminComponent implements OnInit {
   ngOnInit() {
   }
 
-  submitForm(title: string, artist: string, description: string) {
-    var newAlbum: Album = new Album(title, artist, description);
+  submitForm(title: string, artist: string, description: string, image: string) {
+    var newAlbum: Album = new Album(title, artist, description, image);
     this.albumService.addAlbum(newAlbum);
   }
 
