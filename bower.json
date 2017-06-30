@@ -6,7 +6,7 @@
     "sowmya dinavahi <sowmya.dsl@gmail.com>"
   ],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/sowmyadsl/album-store-angular2",
   "ignore": [
     "**/.*",
     "node_modules",

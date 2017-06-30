@@ -2,10 +2,21 @@ h3 {
   text-align: center;
 }
 .record {
-  position: relative;
-  width: 25%;
-  display: inline-block;
-  padding: 1em;
+  padding: 10px;
+ flex-basis: 23%;
+ min-height: 250px;
+ min-width: 350px;
+ display: flex;
+ margin: 8px;
+ justify-content: center;
+ align-items: center;
+}
+
+.records{
+  display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+ align-items: center;
 }
 .record img {
   width: 100%;
