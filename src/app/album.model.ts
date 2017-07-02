@@ -6,5 +6,6 @@ export class Album {
     public artist: string,
     public description: string,
     public image: string,
+    public genre: string
   ){}
 }
