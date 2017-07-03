@@ -48,6 +48,10 @@ h3 {
   opacity: 1;
 }
 
+select {
+  width: 200px;
+}
+
 @media (max-width: 992px) {
   .record {
     width: 33.33%;

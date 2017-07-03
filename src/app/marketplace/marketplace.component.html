@@ -1,6 +1,16 @@
 <h2>Marketplace</h2>
 
 <div *ngIf ="currentRoute ==='/marketplace'" >
+
+  <select class="form-control" (change)="onChange($event.target.value)">
+    <option value="" disabled selected>Filter By Genre</option>
+    <option value="hiphop">HipHop</option>
+    <option value="rock">Rock</option>
+    <option value="pop">Pop</option>
+    <option value="blues">Blues</option>F
+    <option value="country">Country</option>
+    <option value="classical">Classical</option>
+  </select>
   <div class="records">
     <div *ngFor="let album of albums | async" class="record">
       <div class="record-info-wrapper" (click)="goToDetailPage(album)">
@@ -29,7 +39,7 @@
         </div>
       </div>
   </div>
-  <div *ngIf="currentRoute === '/admin'" class="col-md-6">
+  <div class="col-md-6">
     <app-edit-album [selectedAlbum]="album"></app-edit-album>
   </div>
   </div>
